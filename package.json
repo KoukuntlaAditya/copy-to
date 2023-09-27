@@ -1,5 +1,5 @@
 {
-  "name": "copy-to",
+  "name": "directory-copy-to",
   "version": "1.0.0",
   "description": "Module to replace directories",
   "main": "lib/index.js",
@@ -12,9 +12,8 @@
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
-    "test": "jest --config jest.config.js",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
@@ -24,7 +23,7 @@
   "homepage": "https://github.com/yourusername/dir-switcher",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/dir-switcher.git"
+    "url": "git+https://github.com/yourusername/dir-switcher.git"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.2",

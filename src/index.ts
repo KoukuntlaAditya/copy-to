@@ -8,7 +8,7 @@ const TEMP_DIR = path.join(os.homedir(), '_dir_switch_temp');
 const LAST_DESTINATION_FILE = path.join(os.homedir(), 'last-destination.txt');
 
 // Function to store the last destination path in a file
-const storeLastDestinationPath = async (destinationPath: string): Promise<void> => {
+export const storeLastDestinationPath = async (destinationPath: string): Promise<void> => {
   try {
     await fs.writeFile(LAST_DESTINATION_FILE, destinationPath, 'utf-8');
     console.log(`Last destination path saved: ${destinationPath}`);
@@ -18,7 +18,7 @@ const storeLastDestinationPath = async (destinationPath: string): Promise<void> 
 };
 
 // Function to replace a directory
-const replaceDirectory = async (srcPath: string, destPath: string): Promise<void> => {
+export const replaceDirectory = async (srcPath: string, destPath: string): Promise<void> => {
   try {
     await fs.copy(destPath, TEMP_DIR, { overwrite: true });
     await fs.copy(srcPath, destPath, { overwrite: true });
@@ -32,7 +32,7 @@ const replaceDirectory = async (srcPath: string, destPath: string): Promise<void
 };
 
 // Function to undo the directory replacement
-const undoReplace = async (): Promise<void> => {
+export const undoReplace = async (): Promise<void> => {
   try {
     const lastDestinationPath = await fs.readFile(LAST_DESTINATION_FILE, 'utf-8');
     if (lastDestinationPath) {
