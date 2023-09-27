@@ -1,6 +1,6 @@
 {
-  "name": "directory-copy-to",
-  "version": "1.0.0",
+  "name": "dir-copy-to",
+  "version": "1.0.3",
   "description": "Module to replace directories",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -33,7 +33,6 @@
     "@typescript-eslint/parser": "5.52.0",
     "eslint": "8.35.0",
     "eslint-plugin-jest": "27.2.1",
-    "fs-extra": "^11.1.1",
     "jest": "29.4.3",
     "prettier": "2.8.4",
     "ts-jest": "29.0.5",
@@ -43,7 +42,8 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "commander": "^11.0.0"
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1"
   },
   "publishConfig": {
     "access": "public"
